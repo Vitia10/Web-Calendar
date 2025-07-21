@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{%block title%}{%endblock%}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static  'index/sample.css' %}">
+</head>
+<body>
+    <div class="d-flex gap-2 justify-content-center py-5">
+        <a class="btn btn-primary rounded-pill px-3" href="/" type="button"><b>Home</b></a>
+        <a class="btn btn-primary rounded-pill px-3" href="/calendar/" type="button"><b>Calendar</b></a>
+        <a class="btn btn-primary rounded-pill px-3" href="/testing/" type="button"><b>Testing</b></a>
+    </div>
+</body>
+    <div>
+         {%block body%}{%endblock%}
+
+    </div>
+</html>

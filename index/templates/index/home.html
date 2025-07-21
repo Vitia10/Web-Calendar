@@ -1,0 +1,61 @@
+
+{%extends 'index/general.html'%}
+
+{%block title%}
+Web Calendar
+{%endblock%}
+{%block body%}
+
+    <div class="button-group">
+        <form method="POST" action="{% url 'index_column' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Kids"/>
+            <input type="hidden" name="money" value="25"/>
+            <button type="submit">Kids</button>
+        </form>
+        <form method="POST" action="{% url 'index_column' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Man"/>
+            <input type="hidden" name="money" value="35"/>
+            <button type="submit">Man</button>
+        </form>
+    </div>
+
+    <div class="button-group">
+        <form method="POST" action="{% url 'index_column' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Complex"/>
+            <input type="hidden" name="money" value="50"/>
+            <button type="submit">Complex</button>
+        </form>
+        <form method="POST" action="{% url 'index_column' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Beard"/>
+            <input type="hidden" name="money" value="23"/>
+            <button type="submit">Beard</button>
+        </form>
+    </div>
+    <div class="button-group">
+        <form method="POST" action="{% url 'index_column' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Father + Son"/>
+            <input type="hidden" name="money" value="55"/>
+            <button type="submit">Father + Son</button>
+        </form>
+        <form method="POST" action="{% url 'index_column' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Other.."/>
+            <input type="hidden" name="money" value="25"/>
+            <button type="submit">Other..</button>
+        </form>
+    </div>
+
+<hr>
+
+{% for element in dataset %}
+    <p class="lead">{{ element.name }}</p>
+    <p>{{ element.money }}</p>
+    <p>{{ element.date|date:"d.m.Y H:i" }}</p>
+{% endfor %}
+
+{%endblock%}

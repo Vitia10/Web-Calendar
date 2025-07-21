@@ -1,0 +1,16 @@
+{% extends 'index/general.html' %}
+{% block title %}
+    Testing
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="Kids"/>
+            <input type="hidden" name="money" value="25"/>
+            <button type="submit">Kids</button>
+        </form>
+
+
+    </div>
+{% endblock %}
